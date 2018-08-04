@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 
+
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -10,6 +11,9 @@ app.use(bodyParser.json());
 
 //tables needed
 var reservations =[
+
+];
+var servedReservations = [
 
 ];
 
@@ -26,6 +30,10 @@ var reservations =[
     res.sendFile(path.join(__dirname, "tables.html"));
   });
   app.get("/reservations", function(req, res) {
+    return res.json(reservations);
+  });
+  app.post("/servedReservations", function(req, res) {
+    reservations = reservations.filter(reservations,reservations.uniqueID !== servedReservations.uniqueID)
     return res.json(reservations);
   });
 
