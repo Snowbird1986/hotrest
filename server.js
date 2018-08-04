@@ -29,7 +29,7 @@ var reservations =[
     return res.json(reservations);
   });
 
-  app.post("/res", function(req, res) {
+  app.post("/reservations", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
     var newReservation = req.body;

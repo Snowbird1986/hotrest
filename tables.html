@@ -55,17 +55,15 @@
                 wellSection.attr("id", "tableWell-" + i);
                 $("#tableSection").append(wellSection);
         
-                $("#tableWell-" + i).append("<h2><span>"+(i+1)+"</span>"+data[i].uniqueID+"</h2>");
+                $("#tableWell-" + i).append("<h2><span class='label label-primary'>"+(i+1)+"</span> | "+data[i].uniqueID+"</h2>");
               }
-            });
-            $.get("/reservations", function(data) {
               for (var i = 5; i < data.length; i++) {
                 var wellwaitSection = $("<div>");
                 wellwaitSection.addClass("well");
-                wellwaitSection.attr("id", "tableWell-well-" + i);
+                wellwaitSection.attr("id", "tableWell-" + i);
                 $("#waitlistSection").append(wellwaitSection);
         
-                $("#tableWell-" + i).append("<h2><span>"+(i+1)+"</span>"+data[i].uniqueID+"</h2>");
+                $("#tableWell-" + i).append("<h2><span class='label label-primary'>"+(i+1)+"</span> | "+data[i].uniqueID+"</h2>");
               }
             });
           </script>
