@@ -63,8 +63,13 @@
                 wellwaitSection.addClass("well");
                 wellwaitSection.attr("id", "tableWell-" + i);
                 $("#waitlistSection").append(wellwaitSection);
-                $("#tableWell-" + i).append("<h2><button class='label label-primary'd = "+(i+1)+">"+(i+1)+"</button> | "+data[i].uniqueID+"</h2>")
+                $("#tableWell-" + i).append("<h2><button class='label label-primary'id = "+(i+1)+">"+(i+1)+"</button> | "+data[i].uniqueID+"</h2>")
               }
+            });
+            $(document.body).on("click", ".label", function() {
+                event.preventDefault();
+                var resNumber = $(this).attr("id");
+                console.log(resNumber)
             });
           </script>
     
