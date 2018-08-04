@@ -25,6 +25,9 @@ var reservations =[
   app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
+  app.get("/reservations", function(req, res) {
+    return res.json(reservations);
+  });
 
   app.post("/res", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
